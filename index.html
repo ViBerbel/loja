@@ -1,13 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Criar conta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./assets/css/base/base.css">
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
+    <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
+    <link rel="stylesheet" href="./assets/css/componentes/botao.css">
 </head>
 <body>
-  <h1>ola mundo
-  </h1>
+    <main class="container flex flex--coluna flex--centro">
+
+        <section>
+            <h2 class="cartao__titulo">Cadastre sua loja</h2>
+            <form id="form" >
+                    <div class="input-container">
+                        <input name="nome" maxlength="30" id="nome" class="input" type="text" placeholder="Nome" data-tipo="nome" required>
+                        <label class="input-label" for="nome">Nome</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input name="cep" id="cep" class="input" type="text" placeholder="CEP" pattern="[\d]{5}-?[\d]{3}" data-tipo="cep" required>
+                        <label class="input-label" for="cep">CEP</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input name="endereco" maxlength="50" id="endereco" class="input" type="text" placeholder="endereco" data-tipo="endereco" required>
+                        <label class="input-label" for="endereco">endereco</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input name="cidade" maxlength="20" id="cidade" class="input" type="text" placeholder="Cidade" data-tipo="cidade" required>
+                        <label class="input-label" for="cidade">Cidade</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input name="estado" maxlength="2" id="estado" class="input" type="text" placeholder="Estado" data-tipo="estado" pattern="^(\s*(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)?)$" required>
+                        <label class="input-label" for="estado">UF:</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                <button class="botao" id="botao--cadastro">Cadastrar</a>
+            </form>
+            
+        </section>
+        <label for="filtrar-tabela">Filtre:</label>
+		<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome da loja">
+        <table>
+            <thead>
+              <tr>
+                <th>NOME</th>
+                <th>CEP</th>
+                <th>ENDERECO</th>
+                <th>CIDADE</th>
+                <th>ESTADO</th>
+              </tr>
+            </thead>
+            <tbody id="lista--cadastro">
+            </tbody>
+          </table>
+    
+    </main>
+    <script src="./js/app.js" type="module"></script>
+    <script src="/js/validacao.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/remove-cadastro.js"></script>
+    <script src="/js/filtra.js"></script>
 </body>
 </html>
